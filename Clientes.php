@@ -5,8 +5,10 @@
 
 
 <?php 
+if(isset($_POST['btnAgregar'])){
+    insert($conection);
+}
 
-insert($conection);
 
 function insert($conection){
     $Cod_Cliente = $_POST["Cod_Cliente"];
@@ -21,17 +23,24 @@ function insert($conection){
     mysqli_close($conection);
     
     if(!$result){
-        die("No se puede agregar datos");
+        header("Location prueba.php");
+        die("<script type='text/javascript'>alert('Verifica que el ID sea valido');</script>");
+        
     }
     else{
-        echo "<script type='text/javascript'>alert('Cliente Ingresado');</script>";
-    }
+        
+        header("Location: prueba.php");
+        }
 }
 
 function GetClientes($conection){
     $consulta = " SELECT * FROM clientes";
     $result =mysqli_query($conection,$consulta);
     mysqli_close($conection);
+    
+    if(!$result){
+        die("<script type='text/javascript'>alert('Failed getting data');</script>");
     }
+}
 
 ?>
