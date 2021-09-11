@@ -5,7 +5,6 @@
 
 
 <?php 
-include("./connection.php");
 
 insert($conection);
 
@@ -20,12 +19,19 @@ function insert($conection){
     Values ('$Cod_Cliente', '$Nombre','$Apellido','$Nit','$Direccion')";
     $result = mysqli_query($conection,$consulta);
     mysqli_close($conection);
+    
     if(!$result){
-        die("Error");
+        die("No se puede agregar datos");
     }
     else{
         echo "<script type='text/javascript'>alert('Cliente Ingresado');</script>";
     }
 }
+
+function GetClientes($conection){
+    $consulta = " SELECT * FROM clientes";
+    $result =mysqli_query($conection,$consulta);
+    mysqli_close($conection);
+    }
 
 ?>
