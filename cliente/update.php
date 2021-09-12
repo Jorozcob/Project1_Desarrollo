@@ -1,8 +1,8 @@
 <?php 
-include("./connection.php");
+include("../includes/connection.php");
 
 
-if(isset($_POST['btnActualizar'])){
+if(isset($_POST['btnActualizarCliente'])){
     update($conection);
 }
 function update($conection){
@@ -20,11 +20,11 @@ function update($conection){
     if(!$resultado){
         $_SESSION['message'] = 'Ingresa un ID valido';
         $_SESSION['message_type']= 'danger';
-        header('Location: prueba.php');
+        header('Location: index.php');
     }else{
         $_SESSION['message'] = 'Actualizado';
         $_SESSION['message_type']= 'success';
-        header('Location: prueba.php');
+        header('Location: index.php');
     }
 }
 ?>

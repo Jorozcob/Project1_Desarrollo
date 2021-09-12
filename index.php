@@ -1,6 +1,6 @@
 <?php 
 
-include("./connection.php");
+include("./includes/connection.php");
 
 $Cod_Cliente = $_GET["Cod_Cliente"];
    

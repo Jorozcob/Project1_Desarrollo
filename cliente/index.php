@@ -1,7 +1,7 @@
-<?php include("./connection.php"); ?>
+<?php include("../includes/connection.php"); ?>
 
-<?php include("./includes/header.php"); ?>
-<?php include("./includes/footer.php"); ?>
+<?php include("../includes/header.php"); ?>
+<?php include("../includes/footer.php"); ?>
  
     <div class="container p-4">
         <div class="row">
@@ -35,7 +35,7 @@
                         <input type="text" name="Direccion" class="form-control" 
                         placeholder="Direccion" autofocus>
 
-                        <input type="submit" class="btn btn-success btn-block" name="btnAgregar" value="Agregar">
+                        <input type="submit" class="btn btn-success btn-block" name="btnAgregarCliente" value="Agregar">
                         
                     </fom>
                 </div>

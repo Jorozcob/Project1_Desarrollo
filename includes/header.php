@@ -18,7 +18,7 @@
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
       <a href="prueba.php" class="navbar-brand">Inicio</a>
-      <a href="prueba.php" class="navbar-brand">Clientes</a>
+      <a href="../cliente/index.php" class="navbar-brand">Clientes</a>
       <a href="prueba.php" class="navbar-brand">Productos</a>
       <a href="prueba.php" class="navbar-brand">Facturas</a>
       

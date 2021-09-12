@@ -1,6 +1,6 @@
-<?php include("./connection.php");?>
-<?php include("./includes/header.php"); ?>
-<?php include("./includes/footer.php"); ?>
+<?php include("../includes/connection.php");?>
+<?php include("../includes/header.php"); ?>
+<?php include("../includes/footer.php"); ?>
 
 
 
@@ -37,7 +37,7 @@
                         <input type="text" name="Direccion" class="form-control" 
                         placeholder="Direccion" autofocus>
 
-                        <input type="submit" class="btn btn-success btn-block" name="btnActualizar" value="Actualizar">
+                        <input type="submit" class="btn btn-success btn-block" name="btnActualizarCliente" value="Actualizar">
                         
                     </fom>
                 </div>

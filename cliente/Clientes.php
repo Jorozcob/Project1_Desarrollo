@@ -1,11 +1,11 @@
-<?php include("./connection.php"); ?>
-<?php include("./includes/header.php"); ?>
-<?php include("./includes/footer.php"); ?>
+<?php include("../includes/connection.php"); ?>
+<?php include("../includes/header.php"); ?>
+<?php include("../includes/footer.php"); ?>
 
 
 
 <?php 
-if(isset($_POST['btnAgregar'])){
+if(isset($_POST['btnAgregarCliente'])){
     insert($conection);
 }
 
@@ -27,12 +27,12 @@ function insert($conection){
     if(!$result){
         $_SESSION['message'] = 'ID no valido';
         $_SESSION['message_type']= 'danger';
-        header('Location: prueba.php');
+        header('Location: index.php');
         
     }
     else{
         
-        header("Location: prueba.php");
+        header("Location: index.php");
         $_SESSION['message'] = "Agregado";
         $_SESSION['message_type']= 'success';
         }
@@ -59,7 +59,7 @@ function delete($conection){
     }else{
         $_SESSION['message'] = 'Eliminado';
         $_SESSION['message_type']= 'danger';
-        header('Location: prueba.php');
+        header('Location: index.php');
     }
 }
 
