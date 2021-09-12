@@ -23,15 +23,16 @@ function insert($conection){
     mysqli_close($conection);
     
     if(!$result){
-        header("Location prueba.php");
-        die("<script type='text/javascript'>alert('Verifica que el ID sea valido');</script>");
+        $_SESSION['message'] = 'ID no valido';
+        $_SESSION['message_type']= 'danger';
+        header('Location: prueba.php');
         
     }
     else{
         
         header("Location: prueba.php");
         $_SESSION['message'] = "Agregado";
-        $_SESSION['message_type']= 'success';
+        $_SESSION['message_type']= 'succes';
         }
 }
 
@@ -45,4 +46,19 @@ function GetClientes($conection){
     }
 }
 
+function delete($conection){
+    $Cod_Cliente = $_GET["Cod_Cliente"];
+   
+    $consulta = "DELETE FROM clientes WHERE Cod_Cliente ='$Cod_Cliente'";
+    $resultado=mysqli_query($conection,$consulta);
+    mysqli_close($conection);
+    if(!$resultado){
+        die('Failed');
+    }else{
+        $_SESSION['message'] = 'Eliminado';
+        $_SESSION['message_type']= 'danger';
+        header('Location: prueba.php');
+    }
+}
+delete($conection);
 ?>

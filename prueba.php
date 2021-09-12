@@ -9,8 +9,8 @@
 
                     <?php if(isset($_SESSION['message'])){  ?>
 
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Guardado!</strong>
+                        <div class="alert alert-<?=  $_SESSION['message_type']; ?> alert-dismissible fade show" role="alert">
+                        <?php echo $_SESSION['message']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -23,8 +23,8 @@
                         <input type="text" required name="Cod_Cliente" class="form-control" 
                         placeholder="Codigo del cliente" autofocus >
 
-                        <input type="text" name="Nombre" class="form-control" 
-                        placeholder="Nombre" autofocus required>
+                        <input type="text" required name="Nombre" class="form-control" 
+                        placeholder="Nombre" autofocus >
                         
                         <input type="text" name="Apellido" class="form-control" 
                         placeholder="Apellido" autofocus>
@@ -41,6 +41,7 @@
         </div>
     </div>
 <!-- ------------------------------------------------------------------Get clientes-------------------------------------------------------- -->
+
 <div class='container'>   
         <div class="row">
             <table class="table table-bordered">
@@ -52,6 +53,7 @@
                     <th>Apellido</th>
                     <th>Nit</th>
                     <th>Direccion</th>
+                    <th>Opciones</th>
              </thead>
              
               <?php 
@@ -66,6 +68,17 @@
                  <td><?php echo $row['Apellido']?></td>
                  <td><?php echo $row['Nit']?></td>
                  <td><?php echo $row['Direccion']?></td>
+                 <td>
+                     <a href="delete_Clientes.php?Cod_Cliente=<?php echo $row['Cod_Cliente'] ?>
+                      " class="btn btn-secundary" >
+                        <i class="fas fa-edit" ></i> 
+                    </a>
+                     <a href="Clientes.php?Cod_Cliente=<?php echo $row['Cod_Cliente'] ?> " 
+                        class="btn btn-danger" >
+                     <i class="far fa-minus-circle" ></i>  
+                    </a>
+                    
+                 </td>
              </tr>
              <?php }  }  ?>  
             </table>
