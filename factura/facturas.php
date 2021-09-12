@@ -5,7 +5,7 @@
 
 
 <?php 
-if(isset($_POST['btnAgregarProducto'])){
+if(isset($_POST['btnAgregarFactura'])){
     insert($conection);
 }
 
@@ -13,12 +13,14 @@ if(isset($_POST['btnAgregarProducto'])){
 delete($conection);
 
 function insert($conection){
-    $Cod_Producto = $_POST["Cod_Producto"];
-    $Nombre = $_POST["Nombre"];
-    $Fecha_Caducidad = $_POST["Fecha_Caducidad"];
     
-    $consulta = "INSERT INTO productos(Cod_Producto, Nombre, Fecha_Caducidad)
-    Values ('$Cod_Producto', '$Nombre','$Fecha_Caducidad')";
+       
+    $No_Factura = $_POST["No_Factura"];
+    $Fecha = $_POST["Fecha"];
+    $Cod_Cliente = $_POST["Cod_Cliente"];
+    
+    $consulta = "INSERT INTO facturas(No_Factura, Fecha, Cod_Cliente)
+    Values ('$No_Factura', '$Fecha','$Cod_Cliente')";
     $result = mysqli_query($conection,$consulta);
     mysqli_close($conection);
     
@@ -36,8 +38,8 @@ function insert($conection){
         }
 }
 
-function GetProducto($conection){
-    $consulta = " SELECT * FROM productos";
+function GetClientes($conection){
+    $consulta = " SELECT * FROM clientes";
     $result =mysqli_query($conection,$consulta);
     mysqli_close($conection);
     
@@ -47,9 +49,9 @@ function GetProducto($conection){
 }
 
 function delete($conection){
-    $Cod_Producto = $_GET["Cod_Producto"];
+    $No_Factura = $_GET["No_Factura"];
    
-    $consulta = "DELETE FROM productos WHERE Cod_Producto ='$Cod_Producto'";
+    $consulta = "DELETE FROM facturas WHERE No_Factura ='$No_Factura'";
     $resultado=mysqli_query($conection,$consulta);
     mysqli_close($conection);
     if(!$resultado){

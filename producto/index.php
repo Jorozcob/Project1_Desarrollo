@@ -20,7 +20,6 @@
                     
                 <div class="card cadard-body">
                     <form action="productos.php" method="post">
-                        
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         <i class="fas fa-plus-circle" ></i> 
@@ -52,7 +51,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success btn-block" name="btnAgregarProducto" value="Agregar">
-                                    <i class="fas fa-plus-square" ></i> 
+                                     <i class="fas fa-plus-square" ></i> 
                                 </button>
                             </div>
                             </div>
