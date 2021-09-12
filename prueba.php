@@ -34,7 +34,9 @@
                         
                         <input type="text" name="Direccion" class="form-control" 
                         placeholder="Direccion" autofocus>
-                        <input type="submit" class="btn btn-success btn-block" name="btnAgregar" value="Agregar"> 
+
+                        <input type="submit" class="btn btn-success btn-block" name="btnAgregar" value="Agregar">
+                        
                     </fom>
                 </div>
             </div>
@@ -69,8 +71,7 @@
                  <td><?php echo $row['Nit']?></td>
                  <td><?php echo $row['Direccion']?></td>
                  <td>
-                     <a href="delete_Clientes.php?Cod_Cliente=<?php echo $row['Cod_Cliente'] ?>
-                      " class="btn btn-secundary" >
+                     <a href="formupdate.php" class="btn btn-secundary" >
                         <i class="fas fa-edit" ></i> 
                     </a>
                      <a href="Clientes.php?Cod_Cliente=<?php echo $row['Cod_Cliente'] ?> " 

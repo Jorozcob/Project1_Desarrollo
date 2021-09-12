@@ -10,6 +10,8 @@ if(isset($_POST['btnAgregar'])){
 }
 
 
+delete($conection);
+
 function insert($conection){
     $Cod_Cliente = $_POST["Cod_Cliente"];
     $Nombre = $_POST["Nombre"];
@@ -32,7 +34,7 @@ function insert($conection){
         
         header("Location: prueba.php");
         $_SESSION['message'] = "Agregado";
-        $_SESSION['message_type']= 'succes';
+        $_SESSION['message_type']= 'success';
         }
 }
 
@@ -60,5 +62,6 @@ function delete($conection){
         header('Location: prueba.php');
     }
 }
-delete($conection);
+
+
 ?>
