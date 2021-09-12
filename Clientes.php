@@ -30,6 +30,8 @@ function insert($conection){
     else{
         
         header("Location: prueba.php");
+        $_SESSION['message'] = "Agregado";
+        $_SESSION['message_type']= 'success';
         }
 }
 
