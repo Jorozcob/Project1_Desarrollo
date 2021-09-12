@@ -20,18 +20,45 @@
                     
                 <div class="card cadard-body">
                     <form action="productos.php" method="post">
-                        <input type="text" required name="Cod_Producto" class="form-control" 
-                        placeholder="Codigo del producto" autofocus >
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-plus-circle" ></i> 
+                        </button>
 
-                        <input type="text" required name="Nombre" class="form-control" 
-                        placeholder="Nombre" autofocus >
-                        
-                        <label>Fecha cadicidad</label>
-                        <input type="date" name="Fecha_Caducidad" class="form-control" 
-                        placeholder="Fecha Caducidad" autofocus>
-                       
-                        <input type="submit" class="btn btn-success btn-block" name="btnAgregarProducto" value="Agregar">
-                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="text" required name="Cod_Producto" class="form-control" 
+                                                placeholder="Codigo del producto" autofocus >
+
+                                                <input type="text" required name="Nombre" class="form-control" 
+                                                placeholder="Nombre" autofocus >
+                                                
+                                                <label>Fecha caducidad</label>
+                                                <input type="date" name="Fecha_Caducidad" class="form-control" 
+                                                placeholder="Fecha Caducidad" autofocus>
+
+                                                
+                                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-block" name="btnAgregarProducto" value="Agregar">
+                                    <i class="fas fa-plus-square" ></i> 
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
                     </fom>
                 </div>
             </div>
@@ -62,7 +89,7 @@
                  <td><?php echo $row['Nombre']?></td>
                  <td><?php echo $row['Fecha_Caducidad']?></td>
                  <td>
-                     <a href="formupdate.php" class="btn btn-secundary" >
+                     <a href="formupdate.php" class="btn btn-success" >
                         <i class="fas fa-edit" ></i> 
                     </a>
                      <a href="productos.php?Cod_Producto=<?php echo $row['Cod_Producto'] ?> " 
